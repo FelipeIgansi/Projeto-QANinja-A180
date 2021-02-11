@@ -1,11 +1,17 @@
+
+
 #    Cenario:  Fazer cadastro
 Dado('que acesso a página de cadastro') do
     visit "http://rocklov-web:3000/signup"
 end
   
 Quando('submeto meu cadastro completo') do
+
+    email = "felipeteste@gmail.com"
+    MongoDB.new.remove_user(email)
+
     find("#fullName").set "Teste"
-    find("#email").set Faker::Internet.free_email 
+    find("#email").set email
     find("#password").set "123"
     
     click_button "Cadastrar"
@@ -20,11 +26,9 @@ end
 
 Quando('submeto o meu cadastro sem  o nome') do
     
-    find("#email").set Faker::Internet.free_email 
+    find("#email").set Faker::Internet.free_email  
     find("#password").set "123"
     
-    sleep 10
-
     click_button "Cadastrar"
     
 end
@@ -62,7 +66,7 @@ end
 
 #     Cenario: Submenter o cadastro sem senha
 
-Quando('submeto o meu cadastro sem  o senha') do
+Quando('submeto o meu cadastro sem a senha') do
     find("#fullName").set "Teste"
     find("#email").set Faker::Internet.free_email 
     
