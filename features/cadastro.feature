@@ -9,45 +9,25 @@ Funcionalidade: Cadastro
     @cadastro
     Cenario:  Fazer cadastro
 
-    Dado que acesso a página de cadastro
-    Quando submeto o seguinte formulario de cadastro:
-        |nome       |email                      |senha   |
-        |Felipe     |felipeteste01@gmail.com    |123     |
-    Então sou redirecionado para o dashboard
+        Dado que acesso a página de cadastro
+        Quando submeto o seguinte formulario de cadastro:
+            | nome   | email                   | senha |
+            | Felipe | felipeteste01@gmail.com | 123   |
+        Então sou redirecionado para o dashboard
 
-    @tentativa_cadastro
-    Cenario: Submenter o cadastro sem o nome
+
+    Esquema do Cenario: Tentativa de Cadastro
 
         Dado  que acesso a página de cadastro
         Quando submeto o seguinte formulario de cadastro:
-            |nome       |email                      |senha   |
-            |           |felipeteste01@gmail.com    |123     |
-        Então  vejo a mensagem de alerta: "Oops. Informe seu nome completo!"
+            | nome         | email         | senha         |
+            | <nome_input> | <email_input> | <senha_input> |
+        Então  vejo a mensagem de alerta: "<mensagem_output>"
 
-    @tentativa_cadastro
-    Cenario: Submenter o cadastro sem o email
-
-        Dado que acesso a página de cadastro
-        Quando submeto o seguinte formulario de cadastro:
-            |nome       |email                      |senha   |
-            |Felipe     |                           |123     |
-        Então vejo a mensagem de alerta: "Oops. Informe um email válido!"
-
-    @tentativa_cadastro
-    Cenario: Submenter o cadastro com o email incorreto
-
-        Dado que acesso a página de cadastro
-        Quando submeto o seguinte formulario de cadastro:
-            |nome       |email                      |senha   |
-            |Felipe     |felipeteste01#gmail.com    |123     |
-        Então vejo a mensagem de alerta: "Oops. Informe um email válido!"
-
-    @tentativa_cadastro
-    Cenario: Submenter o cadastro sem a senha
-
-        Dado que acesso a página de cadastro
-        Quando submeto o seguinte formulario de cadastro:
-            |nome       |email                      |senha   |
-            |Felipe     |felipeteste01@gmail.com    |        |
-        Então vejo a mensagem de alerta: "Oops. Informe sua senha secreta!"
-
+        Exemplos:
+            | nome_input | email_input             | senha_input | mensagem_output                  |
+            |            | felipeteste01@gmail.com | 123         | Oops. Informe seu nome completo! |
+            | Felipe     |                         | 123         | Oops. Informe um email válido!   |
+            | Felipe     | felipeteste01&gmail.com | 123         | Oops. Informe um email válido!   |
+            | Felipe     | felipeteste01*gmail.com | 123         | Oops. Informe um email válido!   |
+            | Felipe     | felipeteste01@gmail.com |             | Oops. Informe sua senha secreta! |

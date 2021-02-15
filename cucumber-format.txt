@@ -1,0 +1,35 @@
+    "cucumberautocomplete.formatConfOverride": {
+        //Funcionalidade
+        "Funcionalidade": 0,
+        "Característica": 0,
+        "Caracteristica": 0,
+        //background
+        "Contexto": 1,
+        "Cenário de Fundo": 1,
+        "Cenario de Fundo": 1,
+        "Fundo": 1,
+        //scenario
+        "Cenário": 1,
+        "Cenario": 1,
+        "Esquema do Cenário": 1,
+        "Esquema do Cenario": 1,
+        "Delineação do Cenário": 1,
+        "Delineacao do Cenario": 1,
+        //examples
+        "Exemplos": 2,
+        "Cenários": 3,
+        "Cenarios": 3,
+        //given
+        "Dado": 2,
+        "Dada": 2,
+        "Dados": 2,
+        "Dadas": 2,
+        //when
+        "Quando": 2,
+        //then
+        "Então": 2,
+        "Entao": 2,
+        //E MAs
+        "E": 3,
+        "Mas": 3,
+    },
