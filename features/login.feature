@@ -12,34 +12,16 @@ Funcionalidade: Login
         Dado que acesso a página principal.
         Quando submeto minhas credenciais com "felipeteste01@gmail.com" e "123"
         Então sou redirecionado para o dashboard
-        
 
-    Cenário: Senha incorreta
-
+    Esquema do Cenario: Tentar logar
         Dado que acesso a página principal.
-        Quando submeto minhas credenciais com a senha incorreta.
-        Então vejo a mensagem de alerta: Usuário e/ou senha inválidos.
+        Quando submeto minhas credenciais com "<email_input>" e "<senha_input>"
+        Então  vejo a mensagem de alerta: "<mensagem_output>"
 
-    Cenário: Email não cadastrado
-
-        Dado que acesso a página principal.
-        Quando submeto minhas credenciais com Email que não existe na RockLov.
-        Então vejo a mensagem de alerta: Usuário e/ou senha inválidos.
-
-    Cenário: Email incorreto
-
-        Dado que acesso a página principal.
-        Quando submeto minhas credenciais com email incorreto.
-        Então vejo a mensagem de alerta: Oops. Informe em email válido!
-
-    Cenário:  Email não informado
-
-        Dado que acesso a página principal.
-        Quando submeto minhas credenciais sem o email.
-        Então vejo a mensagem de alerta: Oops. Informe em email válido!
-
-    Cenário: Senha não informada
-
-        Dado que acesso a página principal.
-        Quando submeto minhas credenciais sem o senha.
-        Então vejo a mensagem de alerta: Oops. Informe em senha válido!
+        Exemplos:
+            | email_input             | senha_input | mensagem_output                  |
+            | felipeteste01@gmail.com | 1234        | Usuário e/ou senha inválidos.    |
+            | felipeteste@gmail.com   | 123         | Usuário e/ou senha inválidos.    |
+            | felipeteste*gmail.com   | 123         | Oops. Informe um email válido!   |
+            |                         | 123         | Oops. Informe um email válido!   |
+            | felipeteste@gmail.com   |             | Oops. Informe sua senha secreta! |
