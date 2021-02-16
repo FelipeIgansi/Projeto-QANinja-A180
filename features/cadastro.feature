@@ -12,7 +12,7 @@ Funcionalidade: Cadastro
         Dado que acesso a página de cadastro
         Quando submeto o seguinte formulario de cadastro:
             | nome   | email                   | senha |
-            | Felipe | felipeteste01@gmail.com | 123   |
+            | Felipe | felipeteste01@gmail.com |123    |
         Então sou redirecionado para o dashboard
 
 

@@ -1,5 +1,5 @@
 Dado('que acesso a página principal.') do
-    visit "http://rocklov-web:3000"
+    visit "/"
   end
   
   Quando('submeto minhas credenciais com {string} e {string}') do |email, senha|
@@ -7,5 +7,7 @@ Dado('que acesso a página principal.') do
     find("input[placeholder='Sua senha secreta']").set(senha)
 
     click_button "Entrar"
+
+    sleep 10
 
   end

@@ -23,5 +23,7 @@ Funcionalidade: Login
             | felipeteste01@gmail.com | 1234        | Usuário e/ou senha inválidos.    |
             | felipeteste@gmail.com   | 123         | Usuário e/ou senha inválidos.    |
             | felipeteste*gmail.com   | 123         | Oops. Informe um email válido!   |
+            | felipeteste*gmail       | 123         | Oops. Informe um email válido!   |
+            | *gmail.com              | 123         | Oops. Informe um email válido!   |
             |                         | 123         | Oops. Informe um email válido!   |
             | felipeteste@gmail.com   |             | Oops. Informe sua senha secreta! |
