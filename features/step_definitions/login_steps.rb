@@ -8,6 +8,6 @@ Dado('que acesso a página principal.') do
 
     click_button "Entrar"
 
-    sleep 10
+    #sleep 10
 
   end
